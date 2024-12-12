@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, make_response, jsonify, session
+from flask import Flask, make_response, jsonify, request, session
 from flask_migrate import Migrate
 
 from models import db, Article, User
@@ -22,12 +22,10 @@ def clear_session():
 
 @app.route('/articles')
 def index_articles():
-
     pass
 
-@app.route('/articles/<int:id>')
-def show_article(id):
-
+@app.route('/articles/<int:id>', methods=['GET'])
+def show_session(id):
     pass
 
 if __name__ == '__main__':
